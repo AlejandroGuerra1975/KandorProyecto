@@ -1,0 +1,9 @@
+<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 20C0 8.9543 8.95431 0 20 0H30C41.0457 0 50 8.95431 50 20V30C50 41.0457 41.0457 50 30 50H20C8.9543 50 0 41.0457 0 30V20Z" fill="#021E4A"/>
+<line x1="19" y1="16" x2="39" y2="16" stroke="#0160FB" stroke-width="4"/>
+<line x1="12" y1="16" x2="16" y2="16" stroke="#0160FB" stroke-width="4"/>
+<line x1="19" y1="26" x2="39" y2="26" stroke="#0160FB" stroke-width="4"/>
+<line x1="12" y1="26" x2="16" y2="26" stroke="#0160FB" stroke-width="4"/>
+<line x1="19" y1="36" x2="39" y2="36" stroke="#0160FB" stroke-width="4"/>
+<line x1="12" y1="36" x2="16" y2="36" stroke="#0160FB" stroke-width="4"/>
+</svg>

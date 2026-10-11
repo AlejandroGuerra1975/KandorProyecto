@@ -1,0 +1,254 @@
+/*Fuente*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/*CONTENEDOR PRINCIPAL*/
+.container-login {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+}
+
+/*SECCION DE LOGIN*/
+.seccion-login {
+    background-image: url(../../assets/fondos/fondo_login.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/*LADO IZQUIERDO (TEXTO)*/
+/*contenedor del texto*/
+.cont-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    justify-content: space-between;
+}
+
+/*texto superior*/
+.text-superior {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+/*Logo*/
+.text-superior img {
+    width: 230px;
+}
+
+/*texto h2*/
+.text-superior h2 {
+    font-size: 26px;
+    font-weight: 600;
+    color: #A9B8C8;
+}
+
+/*texto p*/
+.text-superior p {
+    font-size: 15px;
+    color: #A9B8C8;
+    font-weight: 600;
+}
+
+
+/*elementos inferiores*/
+.elements-inferiores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+}
+
+/*iconos de la parte inferior*/
+.elements-inferiores .iconos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+/*tamaño de los iconos*/
+.elements-inferiores .iconos img {
+    width: 60px;
+}
+
+/*texto bajo del icono*/
+.elements-inferiores .iconos p {
+    color: #A9B8C8;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+
+/*Animacion de los iconos*/
+@keyframes flotar {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
+    100% {transform: translateY(0);}
+}
+
+.icon1 {animation: flotar 3s ease-in-out infinite;}
+.icon2 {animation: flotar 3.5s ease-in-out infinite 0.5s;}
+.icon3 {animation: flotar 4s ease-in-out infinite 1s;}
+
+
+
+/*LADO DERECHO (FORMULARIO)*/
+/*Contenedor del formulario*/
+.cont-formulario {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgba(89, 90, 239, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    padding: 40px 20px 20px 20px;
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+}
+
+/*texto superior del formulario*/
+.text-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*texto h2*/
+.text-form h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+}
+
+/*testo p*/
+.text-form p {
+    font-size: 15px;
+    font-weight: 600;
+    color: #A9B8C8;
+}
+
+
+/*Formulario*/
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*inputs del formulario*/
+form #correo, #contrasena {
+    width: 100%;
+    min-width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    border: 2px solid rgba(89, 90, 239, 0.15);
+    outline: none;
+    padding: 0 55px;
+    background-color: #021F59;
+    color: white;
+    font-size: 15px;
+}
+
+form #correo::placeholder, #contrasena::placeholder {
+    color: #A9B8C8;
+    font-size: 14px;
+}
+
+form #correo:focus, #contrasena:focus {
+    border-color: #23415D;
+    box-shadow: 0 0 5px rgba(89, 90, 239, 0.6);
+}
+
+/*label del formulario*/
+form label {
+    color: #A9B8C8;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+/*Iconos del input*/
+form .cont-input {
+    position: relative;
+}
+
+form .cont-input img {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/*Iconos de ocultar/mostrar contraseña*/
+form .cont-input .icono-contr {
+    left: 360px;
+    pointer-events: all;
+    cursor: pointer;
+}
+
+form .cont-input .icono-contr.oculto {
+    display: none;
+}
+
+/*Recordarme y recuperar contraseña*/
+form .recordarme-recupContr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0 20px 0;
+}
+
+/*boton recuperar contraseña*/
+.recordarme-recupContr .btn-recup-contr {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #1683F5;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/*boton de iniciar sesion*/
+form .btn-iniciar-s {
+    background-color: #1683F5;
+    padding: 7px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+form .btn-iniciar-s:hover{
+    background-color: #3B9BFF;
+}
+
+/*enlace de registro*/
+.cont-formulario .enlace-registro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/*Enlace p*/
+.cont-formulario .enlace-registro p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #A9B8C8;
+}
+
+/*Enlace a*/
+.cont-formulario .enlace-registro p a{
+    color: #1683F5;
+}
