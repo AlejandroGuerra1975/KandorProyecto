@@ -11,11 +11,12 @@
     <link rel="stylesheet" href="css/reset_general.css">
     <link rel="stylesheet" href="css/reset_secciones.css">
 
-    <!--Login estilos-->
-    <link rel="stylesheet" href="css/modulos/login.css">
+    <!--Login y registro estilos-->
+    <link rel="stylesheet" href="css/modulos/login_registro.css">
 
     <!--Archivos js-->
     <script src="js/login.js" defer></script>
+    <script src="js/spa.js" defer></script>
 
     <title>Kandor</title>
 </head>
@@ -26,7 +27,7 @@
         <!---------------------------
                 SECCIÓN LOGIN           
         ---------------------------->
-        <section class="seccion seccion-login">
+        <section class="seccion-login">
 
             <div class="container-login">
 
@@ -112,7 +113,114 @@
                     </form>
 
                     <div class="enlace-registro">
-                        <p>¿No tienes cuenta? <a href="#">Regístrate aquí</a></p>
+                        <p>¿No tienes cuenta? <button class="btn-registro">Regístrate aquí</button></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!---------------------------
+                SECCIÓN RGISTRO           
+        ---------------------------->
+        <!--Usé las mismas etiquetas y estilos del login y agrego inputs al form-->
+
+        <section class="seccion-registro oculta">
+
+            <div class="container-login">
+
+
+                <!--Lado izquierdo (Contenido del texto)-->
+                <div class="cont-text">
+                    <div class="text-superior">
+
+                        <img src="assets/logos/Logo_estatico.svg" alt="logo">
+
+                        <h2>Únete y comienza</h2>
+
+                        <p>
+                            Crea tu cuenta y empieza a organizar tus 
+                            tareas hoy mismo.
+                        </p>
+
+                    </div>
+
+                    <div class="elements-inferiores">
+
+                        <div class="iconos">
+                            <img src="assets/iconos/iconos login/icono_organiz_v2.svg" alt="icono" class="icon1">
+                            <p>Organiza tus tareas</p>
+                        </div>
+
+                        <div class="iconos">
+                            <img src="assets/iconos/iconos login/icono_grupo_v2.svg" alt="icono" class="icon2">
+                            <p>Trabaja en equipo</p>
+                        </div>
+
+                        <div class="iconos">
+                            <img src="assets/iconos/iconos login/icono_grafica_v2.svg" alt="icono" class="icon3">
+                            <p>Aunmenta tu productividad</p>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!--Lado derecho (Contenido del formulario)-->
+                <div class="cont-formulario registro">
+
+                    <div class="text-form">
+
+                        <h2>Crear cuenta</h2>
+                        <p>Completa la información para registrarte.</p>
+
+                    </div>
+
+                    <form action="login.php" method="POST">
+
+                        <label for="nombre">Nombre completo</label>
+
+                        <div class="cont-input">
+                            <img src="assets/iconos/iconos login/icono_user.svg" alt="icono" style="width: 25px;">
+                            <input type="text" name="nombre" id="nombre" placeholder="Tu nombre">
+                        </div>
+
+                        <label for="correo">Correo electrónico</label>
+
+                        <div class="cont-input">
+                            <img src="assets/iconos/iconos login/icono_correo.svg" alt="icono" style="width: 25px;">
+                            <input type="email" name="correo" id="correo" placeholder="ejemplo@gmail.com">
+                        </div>
+
+                        <label for="contrasena">Contraseña</label>
+
+                        <div class="cont-input">
+                            <img src="assets/iconos/iconos login/icono_user.svg" alt="icono" style="width: 25px;">
+                            <input type="password" name="contrasena" id="contrasena" placeholder="Ingresa una contraseña">
+
+                            <!--Iconos de ocultar contraseña-->
+                            <img src="assets/iconos/iconos login/icono_mostrar.svg" alt="icono" style="width: 25px;" class="icono-contr">
+                            <img src="assets/iconos/iconos login/icono_ocultar.svg" alt="icono" style="width: 25px;" class="icono-contr oculto">
+                        </div>
+
+                        <label for="contrasena">Confirmar contraseña</label>
+
+                        <div class="cont-input">
+                            <img src="assets/iconos/iconos login/icono_user.svg" alt="icono" style="width: 25px;">
+                            <input type="password" name="contrasena_confirm" id="contrasena_confirm" placeholder="Confirma tu contraseña">
+
+                            <!--Iconos de ocultar contraseña-->
+                            <img src="assets/iconos/iconos login/icono_mostrar.svg" alt="icono" style="width: 25px;" class="icono-contr">
+                            <img src="assets/iconos/iconos login/icono_ocultar.svg" alt="icono" style="width: 25px;" class="icono-contr oculto">
+                        </div>
+
+                        <button type="submit" class="btn-iniciar-s registro" id="btn-iniciar-s">Registrarse</button>
+                    </form>
+
+                    <div class="enlace-registro">
+                        <p>¿No tienes cuenta? <button class="btn-login">Regístrate aquí</button></p>
                     </div>
 
                 </div>
