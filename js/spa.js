@@ -18,3 +18,15 @@ btnIrLogin.addEventListener('click', (e) => {
     seccionRegistro.classList.add('oculta');
     seccionLogin.classList.remove('oculta');
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+    if (seccion === '#registro' || window.location.hash === '#registro') {
+        const seccionRegistro = document.querySelector('.seccion-registro');
+        const seccionLogin = document.querySelector('.seccion-login');
+
+        if (seccionRegistro &&  seccionLogin) {
+            seccionLogin.classList.add('oculta');
+            seccionRegistro.classList.remove('oculta');
+        }
+    }
+});

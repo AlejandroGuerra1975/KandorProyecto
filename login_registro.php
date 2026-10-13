@@ -1,3 +1,15 @@
+<?php
+$mensajes = [
+    "vacio" => "Llena todos los campos.",
+    "correo" => "El correo no es válido.",
+    "clave_corta" => "La contraseña debe tener mínimo 6 caracteres.",
+    "clave_distinta" => "Las contraseñas no coinciden.",
+    "existe" => "Ese correo ya está registrado.",
+    "bd" => "Ocurrió un problema. Intenta más tarde."
+];
+$error = $_GET["error"] ?? "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +25,6 @@
 
     <!--Login y registro estilos-->
     <link rel="stylesheet" href="css/modulos/login_registro.css">
-
-    <!--Archivos js-->
-    <script src="js/login.js" defer></script>
-    <script src="js/spa.js" defer></script>
 
     <title>Kandor</title>
 </head>
@@ -161,18 +169,18 @@
                     </div>
 
 
-                     <!--Para el responsive-->
-                        <div class="text-superior-responsive">
+                    <!--Para el responsive-->
+                    <div class="text-superior-responsive">
 
-                            <img src="assets/logos/Logo_estatico.svg" alt="logo">
+                        <img src="assets/logos/Logo_estatico.svg" alt="logo">
 
-                            <h2>¡Crea tu cuenta!</h2>
+                        <h2>¡Crea tu cuenta!</h2>
 
-                            <p>
-                                Únete y comienza a organizar tus tareas
-                            </p>
+                        <p>
+                            Únete y comienza a organizar tus tareas
+                        </p>
 
-                        </div>
+                    </div>
 
                     <div class="elements-inferiores">
 
@@ -205,7 +213,7 @@
 
                     </div>
 
-                    <form action="login.php" method="POST">
+                    <form id="form_registro" action="controllers/registro_controllers.php" method="POST">
 
                         <label for="nombre">Nombre completo</label>
 
@@ -243,6 +251,8 @@
                             <img src="assets/iconos/iconos login/icono_ocultar.svg" alt="icono" style="width: 25px;" class="icono-contr oculto">
                         </div>
 
+                        <p id="mensaje" class="error"></p>
+
                         <button type="submit" class="btn-iniciar-s registro" id="btn-iniciar-s">Registrarse</button>
                     </form>
 
@@ -256,6 +266,14 @@
         </section>
 
     </main>
+
+
+
+    <!--Archivos js-->
+    <script src="js/login.js" defer></script>
+    <script src="js/spa.js" defer></script>
+    <script src="js/validar_registro.js"></script>
+
 </body>
 
 </html>
