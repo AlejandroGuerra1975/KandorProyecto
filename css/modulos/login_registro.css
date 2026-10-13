@@ -256,14 +256,13 @@ form .btn-iniciar-s:hover{
     color: #A9B8C8;
 }
 
-/*boton*/
-.cont-formulario .enlace-registro p button{
-    padding: 0;
-    border: none;
-    background-color: transparent;
+.cont-formulario #mensaje {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: red;
     font-size: 14px;
-    color: #1683F5;
-    cursor: pointer;
+    font-weight: 600;
 }
 
 

@@ -1,29 +1,21 @@
+
 /*=================================
    OCULTAR Y MOSTRAR CONTRASEÑA 
 =================================*/
-const inputContrasena = document.getElementById('contrasena');
-const iconoMostrar = document.querySelector('.cont-input img.icono-contr:not(.oculto)');
+document.querySelectorAll('.cont-input').forEach(contenedor => {
+  const input = contenedor.querySelector('input[type="password"], input[type="text"]');
+  const iconoMostrar = contenedor.querySelector('.icono-contr:not(.oculto)');
+  const iconoOcultar = contenedor.querySelector('.icono-contr.oculto');
 
-const iconosOjo = document.querySelectorAll('.cont-input .icono-contr');
+  if (input && iconoMostrar && iconoOcultar) {
+    const togglePassword = () => {
+      const esPassword = input.type === 'password';
+      input.type = esPassword ? 'text' : 'password';
+      iconoMostrar.classList.toggle('oculto', esPassword);
+      iconoOcultar.classList.toggle('oculto', !esPassword);
+    };
 
-
-const btnMostrar = iconosOjo[0];
-const btnOcultar = iconosOjo[1];
-
-
-function togglePassword() {
-  const esPassword = inputContrasena.type === 'password';
-  
-  if (esPassword) {
-    inputContrasena.type = 'text';
-    btnMostrar.classList.add('oculto');    // Ocultamos el de mostrar
-    btnOcultar.classList.remove('oculto'); // Mostramos el de ocultar
-  } else {
-    inputContrasena.type = 'password';
-    btnOcultar.classList.add('oculto');    // Ocultamos el de ocultar
-    btnMostrar.classList.remove('oculto'); // Mostramos el de mostrar
+    iconoMostrar.addEventListener('click', togglePassword);
+    iconoOcultar.addEventListener('click', togglePassword);
   }
-}
-
-btnMostrar.addEventListener('click', togglePassword);
-btnOcultar.addEventListener('click', togglePassword);
+});

@@ -1,34 +1,34 @@
 <?php
 
-require "../config/conexion.php";
+// require "../registro.php";
 
 //Solo se aceptan visitas cque tengan un formulario POST
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
- header("Location: ../login_registro.php");
+ header("Location: ../registro.php");
  exit;
 }
 
 // Primero recibir los datos
 $nombre = trim($_POST ["nombre"] ?? "");
 $correo = trim($_POST ["correo"] ?? "");
-$clave = ($_POST ["contrasena"] ?? "");
+$clave = ($_POST ["contrasena"] ?? ""); 
 $confirm_clave = ($_POST ["contrasena_confirm"] ?? "");
 
 // 2 validamos nuevamente pero desde el servidor
 if ($nombre === "" || $correo === "" || $clave === "" || $confirm_clave === "") {
-    header ("Location: ../login_registro.php?error=vacio&seccion=registro"); exit;
+    header ("Location: ../registro.php?error=vacio"); exit;
 }
 
 if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
- header("Location: ../login_registro.php?error=correo"); exit;
+ header("Location: ../registro.php?error=correo"); exit;
 }
 
 if (strlen($clave) < 6) {
-    header("Location: ../login_registro.php?error=clave_corta"); exit;
+    header("Location: ../registro.php?error=clave_corta"); exit;
 }
 
 if ($clave !== $confirm_clave){
-    header("Location: ../login_registro.php?error=clave_distinta"); exit;
+    header("Location: ../registro.php?error=clave_distinta"); exit;
 }
 
 
@@ -63,10 +63,10 @@ $guardar -> execute();
 $guardar -> close();
 
 //6 si todo salió bien, mandamos al login
-header("Location: ../login_registro.php?ok=registrado"); exit; 
+header("Location: ../registro.php?ok=registrado"); exit; 
 
 } catch (mysqli_sql_exception $e) {
-    header("Location: ../login_registro.php?error=bd"); exit;
+    header("Location: ../registro.php?error=bd"); exit;
 }
 
 ?>
