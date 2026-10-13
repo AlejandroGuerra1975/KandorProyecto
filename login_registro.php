@@ -47,6 +47,19 @@
 
                     </div>
 
+                    <!--Para el responsive-->
+                    <div class="text-superior-responsive">
+
+                        <img src="assets/logos/Logo_estatico.svg" alt="logo">
+
+                        <h2>¡Hola de nuevo!</h2>
+
+                        <p>
+                            inicia sesión para continuar
+                        </p>
+
+                    </div>
+
                     <div class="elements-inferiores">
 
                         <div class="iconos">
@@ -141,11 +154,25 @@
                         <h2>Únete y comienza</h2>
 
                         <p>
-                            Crea tu cuenta y empieza a organizar tus 
+                            Crea tu cuenta y empieza a organizar tus
                             tareas hoy mismo.
                         </p>
 
                     </div>
+
+
+                     <!--Para el responsive-->
+                        <div class="text-superior-responsive">
+
+                            <img src="assets/logos/Logo_estatico.svg" alt="logo">
+
+                            <h2>¡Crea tu cuenta!</h2>
+
+                            <p>
+                                Únete y comienza a organizar tus tareas
+                            </p>
+
+                        </div>
 
                     <div class="elements-inferiores">
 

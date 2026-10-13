@@ -9,6 +9,7 @@
     width: 100%;
     height: 100%;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 /*SECCION DE LOGIN*/
@@ -30,29 +31,34 @@
 }
 
 /*texto superior*/
-.text-superior {
+.text-superior, .text-superior-responsive {
     display: flex;
     flex-direction: column;
     gap: 7px;
 }
 
 /*Logo*/
-.text-superior img {
+.text-superior img, .text-superior-responsive img {
     width: 230px;
 }
 
 /*texto h2*/
-.text-superior h2 {
+.text-superior h2, .text-superior-responsive h2 {
     font-size: 26px;
     font-weight: 600;
     color: #A9B8C8;
 }
 
 /*texto p*/
-.text-superior p {
+.text-superior p, .text-superior-responsive p {
     font-size: 15px;
     color: #A9B8C8;
     font-weight: 600;
+}
+
+/*Ocultamos los textos para el responsive*/
+.text-superior-responsive{
+    display: none;
 }
 
 
@@ -155,6 +161,7 @@ form #correo, #contrasena, #nombre, #contrasena_confirm {
     background-color: #021F59;
     color: white;
     font-size: 15px;
+    box-sizing: border-box;
 }
 
 form #correo::placeholder, #contrasena::placeholder, 
@@ -163,7 +170,7 @@ form #correo::placeholder, #contrasena::placeholder,
     font-size: 14px;
 }
 
-form #correo:focus, #contrasena:focus {
+form #correo:focus, #contrasena:focus, #nombre:focus, #contrasena_confirm:focus {
     border-color: #23415D;
     box-shadow: 0 0 5px rgba(89, 90, 239, 0.6);
 }
@@ -256,7 +263,6 @@ form .btn-iniciar-s:hover{
     background-color: transparent;
     font-size: 14px;
     color: #1683F5;
-
     cursor: pointer;
 }
 
@@ -264,9 +270,6 @@ form .btn-iniciar-s:hover{
 /*================================
      ESTILOS PARA EL REGISTRO   
 ================================*/
-/*Se usan los mismos estilo del login*/
-
-/*SECCION DE REGISTRO (cambio de fondo)*/
 .seccion-registro {
     background-image: url(../../assets/fondos/fondo_registro_v2.webp);
     background-size: cover;
@@ -276,7 +279,7 @@ form .btn-iniciar-s:hover{
 
 /*Contenedor del formulario*/
 .cont-formulario.registro {
-    padding: 10px 20px 20px 20px;;
+    padding: 10px 20px 20px 20px;
 }
 
 /*Le damos espacio superior al boton*/
@@ -287,4 +290,115 @@ form .btn-iniciar-s.registro {
 /*Ocultamos la sección*/
 .oculta{
     display: none !important;
+}
+
+
+
+/*================================
+        RESPONSIVE MOVIL  
+================================*/
+@media(max-width: 767px){
+    /*contenedor del login*/
+    .container-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0;
+        flex-direction: column;
+        height: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+        padding: 20px 15px;
+    }
+
+    .seccion-login, .seccion-registro {
+        background-image: url(../../assets/fondos/fondos_responsive/fondo_responsive_v2.webp);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh;
+        height: 100%;
+    }
+
+    /*contenedor del texto superior*/
+    .cont-text{
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    /*Ocultamos el texto superior de escritorio*/
+    .text-superior {
+        display: none;
+    }
+
+    /*Mostramos el texto superior para movil con alineación estricta al centro*/
+    .text-superior-responsive {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .text-superior-responsive h2 {
+        font-size: 26px;
+        font-weight: 600;
+        color: #A9B8C8;
+    }
+
+    .text-superior-responsive p {
+        margin-bottom: 20px;
+    }
+
+    /*logo centrado*/
+    .text-superior-responsive img {
+        width: 210px;
+        margin-bottom: 20px;
+    }
+
+    /*Ocultamos los elementos inferiores*/
+    .elements-inferiores {
+        display: none;
+    }
+
+
+    /*FORMULARIO*/
+    .cont-formulario {
+        padding: 15px;
+        width: 100%;
+        max-width: 320px;
+        box-sizing: border-box;
+    }
+
+    /*boton recuperar contraseña*/
+    .recordarme-recupContr .btn-recup-contr {
+        font-size: 12px;
+    }
+
+    /*Texto superior*/
+    .text-form {
+        display: none;
+    }
+
+    /*inputs del form adaptados a móvil para que no rompan el diseño*/
+    form #correo, #contrasena, #nombre, #contrasena_confirm {
+        min-width: 100%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /*Icono de ver contraseña adaptado para pantallas pequeñas*/
+    form .cont-input .icono-contr {
+        left: auto;
+        right: 15px;
+    }
+
+    /*label de recordarme*/
+    .recordarme-recupContr .recordarme label {
+        font-size: 12px;
+    }
 }
